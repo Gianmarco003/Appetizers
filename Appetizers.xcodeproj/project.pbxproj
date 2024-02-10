@@ -76,17 +76,16 @@
 		1B0086912B777C2A0015EA32 /* Appetizers */ = {
 			isa = PBXGroup;
 			children = (
-				1B6AC4E12B77973D00E76757 /* View model */,
 				1B0086922B777C2A0015EA32 /* AppetizersApp.swift */,
 				1B0086942B777C2A0015EA32 /* PrincepsView.swift */,
 				1B0086A72B777D170015EA32 /* Views */,
+				1B6AC4E12B77973D00E76757 /* View model */,
+				1B6AC4EC2B77C9EB00E76757 /* Remote */,
 				1B106AAA2B778E170000998D /* Data */,
+				1B6AC4ED2B77CA1100E76757 /* Utilities */,
 				1B0086962B777C2C0015EA32 /* Assets.xcassets */,
 				1B0086982B777C2C0015EA32 /* Appetizers.entitlements */,
 				1B0086992B777C2C0015EA32 /* Preview Content */,
-				1B6AC4E42B779B0400E76757 /* Alert.swift */,
-				1B6AC4E62B77A4AF00E76757 /* LoadingView.swift */,
-				1B6AC4E82B77A53D00E76757 /* Color+EXT.swift */,
 			);
 			path = Appetizers;
 			sourceTree = "<group>";
@@ -105,6 +104,7 @@
 				1B0086A52B777CF80015EA32 /* AppetizersListView.swift */,
 				1B0086A12B777CD30015EA32 /* AccountView.swift */,
 				1B0086A32B777CDF0015EA32 /* OrderView.swift */,
+				1B6AC4E62B77A4AF00E76757 /* LoadingView.swift */,
 				1B106AA92B778DFF0000998D /* Small views */,
 			);
 			path = Views;
@@ -121,9 +121,7 @@
 		1B106AAA2B778E170000998D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				1B6AC4EA2B77C4CE00E76757 /* RemoteImage.swift */,
 				1B0086A82B7784E10015EA32 /* Appetizer.swift */,
-				1B106AAB2B778EE50000998D /* NetworkManager.swift */,
 				1B106AAF2B7790550000998D /* AppetizersError.swift */,
 			);
 			path = Data;
@@ -135,6 +133,24 @@
 				1B6AC4E22B77975D00E76757 /* AppetizersListViewModel.swift */,
 			);
 			path = "View model";
+			sourceTree = "<group>";
+		};
+		1B6AC4EC2B77C9EB00E76757 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				1B6AC4EA2B77C4CE00E76757 /* RemoteImage.swift */,
+				1B106AAB2B778EE50000998D /* NetworkManager.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		1B6AC4ED2B77CA1100E76757 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1B6AC4E42B779B0400E76757 /* Alert.swift */,
+				1B6AC4E82B77A53D00E76757 /* Color+EXT.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
