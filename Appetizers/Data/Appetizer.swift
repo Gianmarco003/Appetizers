@@ -27,7 +27,7 @@ struct MockData {
                                            name: "Test appetizer",
                                            description: "This is the description for my appetizer. It's yummy.",
                                            price: 9.99,
-                                           imageURL: "",
+                                           imageURL: "https://seanallen-course-backend.herokuapp.com/images/appetizers/asian-flank-steak.jpg",
                                            calories: 99,
                                            protein: 99,
                                            carbs: 99)
