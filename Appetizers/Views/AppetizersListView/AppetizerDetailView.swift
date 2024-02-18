@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AppetizerDetailView: View {
     
+    @EnvironmentObject var order: Order
+    
     let appetizer: Appetizer
     @Binding var isShowingDetail: Bool
     
@@ -26,45 +28,19 @@ struct AppetizerDetailView: View {
                 .padding()
             Spacer()
             HStack(spacing: 30) {
-                VStack (spacing: 5) {
-                    Text("Calories")
-                        .fontWeight(.bold)
-                        .font(.caption)
-                    Text("\(appetizer.calories)")
-                        .foregroundColor(.secondary)
-                        .fontWeight(.semibold)
-                        .italic()
-                }
-                VStack (spacing: 5) {
-                    Text("Carbs")
-                        .fontWeight(.bold)
-                        .font(.caption)
-                    Text("\(appetizer.carbs)")
-                        .foregroundColor(.secondary)
-                        .fontWeight(.semibold)
-                        .italic()
-                }
-                VStack (spacing: 5) {
-                    Text("Protein")
-                        .fontWeight(.bold)
-                        .font(.caption)
-                    Text("\(appetizer.protein)")
-                        .foregroundColor(.secondary)
-                        .fontWeight(.semibold)
-                        .italic()
-                }
+                NutritionInfo(title: "Calories", value: appetizer.calories)
+                NutritionInfo(title: "Carbs", value: appetizer.carbs)
+                NutritionInfo(title: "Proteins", value: appetizer.protein)
             }
             Button {
-                
+                order.add(appetizer)
+                isShowingDetail = false
             } label: {
-                Text("\(appetizer.price, specifier: "%.2f")€ - Add to order")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .frame(width: 260, height: 50)
+                OrderButton(title: "\(appetizer.price, specifier: "%.2f")€ - Add to order")
             }
             .buttonStyle(.borderedProminent)
-            .tint(.brandPrimary  )
-            .padding(.bottom, 30)
+            .tint(.brandPrimary)
+            .padding(.bottom, 10)
         }
         .frame(width: 300, height: 525)
         .background(Color(.systemBackground))
@@ -74,16 +50,7 @@ struct AppetizerDetailView: View {
             Button {
                 isShowingDetail = false
             } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.white)
-                        .opacity(0.6)
-                    Image(systemName: "xmark")
-                        .imageScale(.small)
-                        .frame(width: 44, height: 44)
-                        .foregroundColor(.black)
-                }
+                XDismissButton()
             }, alignment: .topTrailing)
     }
 }
@@ -91,5 +58,23 @@ struct AppetizerDetailView: View {
 struct AppetizerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         AppetizerDetailView(appetizer: MockData.sampleAppetizer, isShowingDetail: .constant(false))
+    }
+}
+
+struct NutritionInfo: View {
+    
+    let title: String
+    let value: Int
+    
+    var body: some View {
+        VStack (spacing: 5) {
+            Text(title)
+                .fontWeight(.bold)
+                .font(.caption)
+            Text("\(value)")
+                .foregroundColor(.secondary)
+                .fontWeight(.semibold)
+                .italic()
+        }
     }
 }

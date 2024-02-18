@@ -13,7 +13,7 @@ struct PrincepsView: View {
         TabView{
             AppetizersListView()
                 .tabItem {
-                    Image(systemName: "takeoutbag.and.cup.and.straw")
+                    Image(systemName: "menucard")
                     Text("Menù")
                 }
             OrderView()
