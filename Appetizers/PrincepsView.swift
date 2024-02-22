@@ -27,7 +27,6 @@ struct PrincepsView: View {
                     Text("Account")
                 }
         }
-        .accentColor(.brandPrimary)
     }
 }
 

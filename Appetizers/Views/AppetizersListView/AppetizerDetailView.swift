@@ -39,7 +39,6 @@ struct AppetizerDetailView: View {
                 OrderButton(title: "\(appetizer.price, specifier: "%.2f")€ - Add to order")
             }
             .buttonStyle(.borderedProminent)
-            .tint(.brandPrimary)
             .padding(.bottom, 10)
         }
         .frame(width: 300, height: 525)

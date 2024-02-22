@@ -28,7 +28,6 @@ struct OrderView: View {
                         OrderButton(title: "\(order.totalPrice, specifier: "%.2f")€ - Place order")
                     }
                     .buttonStyle(.borderedProminent)
-                    .tint(.brandPrimary)
                     .padding(.bottom, 20)
                 }
                 if order.items.isEmpty {
