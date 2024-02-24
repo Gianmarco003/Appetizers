@@ -9,23 +9,17 @@ import SwiftUI
 
 struct PrincepsView: View {
     
+    @EnvironmentObject var order: Order
+    
     var body: some View {
         TabView{
             AppetizersListView()
-                .tabItem {
-                    Image(systemName: "menucard")
-                    Text("Menù")
-                }
+                .tabItem {Label("Menù", systemImage: "menucard")}
             OrderView()
-                .tabItem {
-                    Image(systemName: "bag")
-                    Text("Order")
-                }
+                .tabItem {Label("Order", systemImage: "bag")}
+                .badge(order.items.count)
             AccountView()
-                .tabItem {
-                    Image(systemName: "person.crop.circle")
-                    Text("Account")
-                }
+                .tabItem {Label("Account", systemImage: "person.crop.circle")}
         }
     }
 }
