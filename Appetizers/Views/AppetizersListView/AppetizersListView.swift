@@ -25,7 +25,7 @@ struct AppetizersListView: View {
                 .navigationTitle("Appetizers")
                 .disabled(viewModel.isShowingDetail)
             }
-            .onAppear {
+            .task {
                 viewModel.getAppetizers()
                 viewModel.isShowingDetail = false
             }
